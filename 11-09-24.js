@@ -36,27 +36,25 @@
 
 
 var expect = function(val) {
-    if (expect(val) === toBe(val)){
-           return true
-       };
-   if (expect(val) === notToBe(val)){
-       return true
-       };
 
-   return [
-    {
-   toBe :  (val) => {
-       return val;
-   }},
-   {
-   notToBe : (val) => {
-       return val;
-   }
-  }]
+    return  {
+     toBe :  (value) => {
+         // return value;
+         if ( val === value) { return true }
+         if ( val !== value) { throw new Error ('Not Equal')}
+     },
+     notToBe : (value) => {
+         // return value;
+         if ( val !== value) { return true}
+         if ( val === value) { return 'Equal'}
+     }
+     }
+
+
 };
 
 //  expect(5);
- 
- expect(5).toBe(5); 
- expect(5).notToBe(5); 
- 
+
+expect(5).toBe(5)
+expect(5).toBe(5); 
+expect(5).notToBe(5); 

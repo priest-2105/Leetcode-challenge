@@ -30,15 +30,33 @@
 
 // CHALLENGE 
 
-/**
- * @param {string} val
- * @return {Object}
- */
+//  @param {string} val
+//   @return {Object}
+
+
+
 var expect = function(val) {
-    
+    if (expect(val) === toBe(val)){
+           return true
+       };
+   if (expect(val) === notToBe(val)){
+       return true
+       };
+
+   return [
+    {
+   toBe :  (val) => {
+       return val;
+   }},
+   {
+   notToBe : (val) => {
+       return val;
+   }
+  }]
 };
 
-/**
- * expect(5).toBe(5); // true
- * expect(5).notToBe(5); // throws "Equal"
- */
+//  expect(5);
+ 
+ expect(5).toBe(5); 
+ expect(5).notToBe(5); 
+ 

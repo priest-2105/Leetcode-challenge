@@ -51,5 +51,3 @@ var twoSum = function(target) {
 
 console.log(twoSum())
 
-
-

@@ -55,4 +55,3 @@ var scoreOfString = function(s) {
     
     return sum;
 };
-

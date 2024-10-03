@@ -47,11 +47,13 @@
  */
 var buildArray = function(nums) {
 
+    let ans = new Array(nums.length);
+
     for( i = 0;  i < nums.length; i++ ) {
-        nums - nums[i * [i - 1]];
-        return nums;
-    }
+        ans[i] = nums[nums[i]];
+    }return ans;
 };
 
 
-console.log(buildArray([2,3,4,5,6]));
+
+console.log(buildArray([0,2,1,5,3,4]));

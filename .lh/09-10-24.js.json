@@ -1,0 +1,26 @@
+{
+    "sourceFile": "09-10-24.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1728432785306,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1728432799462,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,34 +1,37 @@\n-2677. Chunk Array\r\n-Solved\r\n-Easy\r\n-Companies\r\n-Given an array arr and a chunk size size, return a chunked array.\r\n+// 2677. Chunk Array\r\n+// Solved\r\n+// Easy\r\n+// Companies\r\n+// Given an array arr and a chunk size size, return a chunked array.\r\n \r\n-A chunked array contains the original elements in arr, but consists of subarrays each of length size. The length of the last subarray may be less than size if arr.length is not evenly divisible by size.\r\n+// A chunked array contains the original elements in arr, but consists of subarrays each of length size. The length of the last subarray may be less than size if arr.length is not evenly divisible by size.\r\n \r\n-You may assume the array is the output of JSON.parse. In other words, it is valid JSON.\r\n+// You may assume the array is the output of JSON.parse. In other words, it is valid JSON.\r\n \r\n-Please solve it without using lodash's _.chunk function.\r\n+// Please solve it without using lodash's _.chunk function.\r\n \r\n  \r\n \r\n-Example 1:\r\n+// Example 1:\r\n \r\n-Input: arr = [1,2,3,4,5], size = 1\r\n-Output: [[1],[2],[3],[4],[5]]\r\n-Explanation: The arr has been split into subarrays each with 1 element.\r\n-Example 2:\r\n+// Input: arr = [1,2,3,4,5], size = 1\r\n+// Output: [[1],[2],[3],[4],[5]]\r\n+// Explanation: The arr has been split into subarrays each with 1 element.\r\n+// Example 2:\r\n \r\n\\ No newline at end of file\n-Input: arr = [1,9,6,3,2], size = 3\r\n-Output: [[1,9,6],[3,2]]\r\n-Explanation: The arr has been split into subarrays with 3 elements. However, only two elements are left for the 2nd subarray.\r\n-Example 3:\r\n+// Input: arr = [1,9,6,3,2], size = 3\r\n+// Output: [[1,9,6],[3,2]]\r\n+// Explanation: The arr has been split into subarrays with 3 elements. However, only two elements are left for the 2nd subarray.\r\n+// Example 3:\r\n \r\n-Input: arr = [8,5,3,2,6], size = 6\r\n-Output: [[8,5,3,2,6]]\r\n-Explanation: Size is greater than arr.length thus all elements are in the first subarray.\r\n-Example 4:\r\n+// Input: arr = [8,5,3,2,6], size = 6\r\n+// Output: [[8,5,3,2,6]]\r\n+// Explanation: Size is greater than arr.length thus all elements are in the first subarray.\r\n+// Example 4:\r\n \r\n-Input: arr = [], size = 1\r\n-Output: []\r\n-Explanation: There are no elements to be chunked so an empty array is returned.\n+// Input: arr = [], size = 1\r\n+// Output: []\r\n+// Explanation: There are no elements to be chunked so an empty array is returned.\r\n+\r\n+\r\n+\r\n"
+                },
+                {
+                    "date": 1728432804560,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,4 +33,25 @@\n // Output: []\r\n // Explanation: There are no elements to be chunked so an empty array is returned.\r\n \r\n \r\n+\r\n+// SOLUTION \r\n+\r\n+\r\n+/**\r\n+ * @param {Array} arr\r\n+ * @param {number} size\r\n+ * @return {Array}\r\n+ */\r\n+var chunk = function(arr, size) {\r\n+  \r\n+    const chunks = [];\r\n+\r\n+    for (let i = 0; i < arr.length; i += size) {\r\n+        chunks.push(arr.slice(i, i + size)); // Create chunks of size 'size'\r\n+    }\r\n+\r\n+     return chunks;\r\n+\r\n+\r\n+};\r\n"
+                }
+            ],
+            "date": 1728432785306,
+            "name": "Commit-0",
+            "content": "2677. Chunk Array\r\nSolved\r\nEasy\r\nCompanies\r\nGiven an array arr and a chunk size size, return a chunked array.\r\n\r\nA chunked array contains the original elements in arr, but consists of subarrays each of length size. The length of the last subarray may be less than size if arr.length is not evenly divisible by size.\r\n\r\nYou may assume the array is the output of JSON.parse. In other words, it is valid JSON.\r\n\r\nPlease solve it without using lodash's _.chunk function.\r\n\r\n \r\n\r\nExample 1:\r\n\r\nInput: arr = [1,2,3,4,5], size = 1\r\nOutput: [[1],[2],[3],[4],[5]]\r\nExplanation: The arr has been split into subarrays each with 1 element.\r\nExample 2:\r\n\r\nInput: arr = [1,9,6,3,2], size = 3\r\nOutput: [[1,9,6],[3,2]]\r\nExplanation: The arr has been split into subarrays with 3 elements. However, only two elements are left for the 2nd subarray.\r\nExample 3:\r\n\r\nInput: arr = [8,5,3,2,6], size = 6\r\nOutput: [[8,5,3,2,6]]\r\nExplanation: Size is greater than arr.length thus all elements are in the first subarray.\r\nExample 4:\r\n\r\nInput: arr = [], size = 1\r\nOutput: []\r\nExplanation: There are no elements to be chunked so an empty array is returned."
+        }
+    ]
+}

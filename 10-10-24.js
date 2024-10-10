@@ -42,17 +42,15 @@
 var createCounter = function(n) {
 
     return function counter() {
-        for (let i = 0; i < n.length; i++){
-             return n + i;
-         };
+             return n++;
  };
 
 
 };
  
-  
  const counter = createCounter(10)
    counter() 
    counter() 
    counter() 
   
+createCounter();

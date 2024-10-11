@@ -31,9 +31,6 @@
 // Explanation: counter() initially returns -2. Then increases after each sebsequent call.
 
 
-
-
-
 var createCounter = function(n) {
 
     return function counter() {

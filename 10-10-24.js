@@ -34,10 +34,6 @@
 
 
 
-
-
-
-
 var createCounter = function(n) {
 
     return function counter() {

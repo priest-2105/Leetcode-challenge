@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 13,
+            "activePatchIndex": 17,
             "patches": [
                 {
                     "date": 1728522341566,
@@ -60,6 +60,22 @@
                 {
                     "date": 1728522813453,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,11 +41,9 @@\n \r\n var createCounter = function(n) {\r\n \r\n     return function counter() {\r\n-        for (let i = 0; i < n.length; i++){\r\n              return n + i;\r\n-         };\r\n  };\r\n \r\n \r\n };\r\n"
+                },
+                {
+                    "date": 1728732726329,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,15 +35,12 @@\n \r\n \r\n \r\n \r\n-\r\n-\r\n-\r\n var createCounter = function(n) {\r\n \r\n     return function counter() {\r\n-             return n + i;\r\n+             return n++;\r\n  };\r\n \r\n \r\n };\r\n"
+                },
+                {
+                    "date": 1728732842283,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,5 +49,6 @@\n    counter() \r\n    counter() \r\n    counter() \r\n   \r\n-createCounter();\n\\ No newline at end of file\n+createCounter();\r\n+\r\n"
+                },
+                {
+                    "date": 1728733079161,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,4 +51,5 @@\n    counter() \r\n   \r\n createCounter();\r\n \r\n+\r\n"
+                },
+                {
+                    "date": 1728734776087,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,8 +35,10 @@\n \r\n \r\n \r\n \r\n+\r\n+\r\n var createCounter = function(n) {\r\n \r\n     return function counter() {\r\n              return n++;\r\n"
                 }
             ],
             "date": 1728522341566,

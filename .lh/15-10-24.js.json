@@ -1,0 +1,62 @@
+{
+    "sourceFile": "15-10-24.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 11,
+            "patches": [
+                {
+                    "date": 1728963335693,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1728963359633,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,44 +1,49 @@\n-2715. Timeout Cancellation\r\n-Easy\r\n-Companies\r\n-Given a function fn, an array of arguments args, and a timeout t in milliseconds, return a cancel function cancelFn.\r\n+// 2715. Timeout Cancellation\r\n+// Easy\r\n+// Companies\r\n+// Given a function fn, an array of arguments args, and a timeout t in milliseconds, return a cancel function cancelFn.\r\n \r\n-After a delay of cancelTimeMs, the returned cancel function cancelFn will be invoked.\r\n+// After a delay of cancelTimeMs, the returned cancel function cancelFn will be invoked.\r\n \r\n-setTimeout(cancelFn, cancelTimeMs)\r\n-Initially, the execution of the function fn should be delayed by t milliseconds.\r\n+// setTimeout(cancelFn, cancelTimeMs)\r\n+// Initially, the execution of the function fn should be delayed by t milliseconds.\r\n \r\n-If, before the delay of t milliseconds, the function cancelFn is invoked, it should cancel the delayed execution of fn. Otherwise, if cancelFn is not invoked within the specified delay t, fn should be executed with the provided args as arguments.\r\n+// If, before the delay of t milliseconds, the function cancelFn is invoked, it should cancel the delayed execution of fn. Otherwise, if cancelFn is not invoked within the specified delay t, fn should be executed with the provided args as arguments.\r\n \r\n  \r\n \r\n-Example 1:\r\n+// Example 1:\r\n \r\n-Input: fn = (x) => x * 5, args = [2], t = 20\r\n-Output: [{\"time\": 20, \"returned\": 10}]\r\n-Explanation: \r\n-const cancelTimeMs = 50;\r\n-const cancelFn = cancellable((x) => x * 5, [2], 20);\r\n-setTimeout(cancelFn, cancelTimeMs);\r\n+// Input: fn = (x) => x * 5, args = [2], t = 20\r\n+// Output: [{\"time\": 20, \"returned\": 10}]\r\n+// Explanation: \r\n+// const cancelTimeMs = 50;\r\n+// const cancelFn = cancellable((x) => x * 5, [2], 20);\r\n+// setTimeout(cancelFn, cancelTimeMs);\r\n \r\n-The cancellation was scheduled to occur after a delay of cancelTimeMs (50ms), which happened after the execution of fn(2) at 20ms.\r\n-Example 2:\r\n+// The cancellation was scheduled to occur after a delay of cancelTimeMs (50ms), which happened after the execution of fn(2) at 20ms.\r\n+// Example 2:\r\n \r\n-Input: fn = (x) => x**2, args = [2], t = 100\r\n\\ No newline at end of file\n-Output: []\r\n-Explanation: \r\n-const cancelTimeMs = 50;\r\n-const cancelFn = cancellable((x) => x**2, [2], 100);\r\n-setTimeout(cancelFn, cancelTimeMs);\r\n+// Input: fn = (x) => x**2, args = [2], t = 100\r\n+// Output: []\r\n+// Explanation: \r\n+// const cancelTimeMs = 50;\r\n+// const cancelFn = cancellable((x) => x**2, [2], 100);\r\n+// setTimeout(cancelFn, cancelTimeMs);\r\n \r\n-The cancellation was scheduled to occur after a delay of cancelTimeMs (50ms), which happened before the execution of fn(2) at 100ms, resulting in fn(2) never being called.\r\n-Example 3:\r\n+// The cancellation was scheduled to occur after a delay of cancelTimeMs (50ms), which happened before the execution of fn(2) at 100ms, resulting in fn(2) never being called.\r\n+// Example 3:\r\n \r\n-Input: fn = (x1, x2) => x1 * x2, args = [2,4], t = 30\r\n-Output: [{\"time\": 30, \"returned\": 8}]\r\n-Explanation: \r\n-const cancelTimeMs = 100;\r\n-const cancelFn = cancellable((x1, x2) => x1 * x2, [2,4], 30);\r\n-setTimeout(cancelFn, cancelTimeMs);\r\n+// Input: fn = (x1, x2) => x1 * x2, args = [2,4], t = 30\r\n+// Output: [{\"time\": 30, \"returned\": 8}]\r\n+// Explanation: \r\n+// const cancelTimeMs = 100;\r\n+// const cancelFn = cancellable((x1, x2) => x1 * x2, [2,4], 30);\r\n+// setTimeout(cancelFn, cancelTimeMs);\r\n \r\n-The cancellation was scheduled to occur after a delay of cancelTimeMs (100ms), which happened after the execution of fn(2,4) at 30ms.\n+// The cancellation was scheduled to occur after a delay of cancelTimeMs (100ms), which happened after the execution of fn(2,4) at 30ms.\r\n+\r\n+\r\n+\r\n+\r\n+\r\n"
+                },
+                {
+                    "date": 1728963729563,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,4 +46,40 @@\n \r\n \r\n \r\n \r\n+\r\n+\r\n+// /\r\n+//   @param {Function} fn\r\n+//   @param {Array} args\r\n+//   @param {number} t\r\n+//   @return {Function}\r\n+//  /\r\n+var cancellable = function(fn, args, t) {\r\n+    //  setTimeout(() => { return fn},t)\r\n+     return fn\r\n+};\r\n+\r\n+\r\n+//    const result = [];\r\n+ \r\n+//    const fn = (x) => x  5;\r\n+//    const args = [2], t = 20, cancelTimeMs = 50;\r\n+ \r\n+//    const start = performance.now();\r\n+ \r\n+//    const log = (...argsArr) => {\r\n+//        const diff = Math.floor(performance.now() - start);\r\n+//        result.push({\"time\": diff, \"returned\": fn(...argsArr)});\r\n+//    }\r\n+        \r\n+//    const cancel = cancellable(log, args, t);\r\n+ \r\n+//    const maxT = Math.max(t, cancelTimeMs);\r\n+            \r\n+//    setTimeout(cancel, cancelTimeMs);\r\n+ \r\n+//    setTimeout(() => {\r\n+//        console.log(result);  \r\n+//    }, maxT + 15)\r\n+ \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1728963740853,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,10 +55,11 @@\n //   @param {number} t\r\n //   @return {Function}\r\n //  /\r\n var cancellable = function(fn, args, t) {\r\n-    //  setTimeout(() => { return fn},t)\r\n-     return fn\r\n+\r\n+     setTimeout(() => { return fn},t)\r\n+\r\n };\r\n \r\n \r\n //    const result = [];\r\n"
+                },
+                {
+                    "date": 1728963746649,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,9 +56,9 @@\n //   @return {Function}\r\n //  /\r\n var cancellable = function(fn, args, t) {\r\n \r\n-     setTimeout(() => { return fn},t)\r\n+       setTimeout(() => { return fn},t)\r\n \r\n };\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1728963757373,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,9 +56,9 @@\n //   @return {Function}\r\n //  /\r\n var cancellable = function(fn, args, t) {\r\n \r\n-       setTimeout(() => { return fn},t)\r\n+     const timer = setTimeout(() => { fn},t)\r\n \r\n };\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1728963765467,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,9 +56,11 @@\n //   @return {Function}\r\n //  /\r\n var cancellable = function(fn, args, t) {\r\n \r\n-     const timer = setTimeout(() => { fn},t)\r\n+     const timer = setTimeout(() => { \r\n+        fn\r\n+    },t)\r\n \r\n };\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1728963772867,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n //  /\r\n var cancellable = function(fn, args, t) {\r\n \r\n      const timer = setTimeout(() => { \r\n-        fn\r\n+     fn(...args)\r\n     },t)\r\n \r\n };\r\n \r\n"
+                },
+                {
+                    "date": 1728963781695,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -58,9 +58,10 @@\n var cancellable = function(fn, args, t) {\r\n \r\n      const timer = setTimeout(() => { \r\n      fn(...args)\r\n-    },t)\r\n+    },t);\r\n+    const a\r\n \r\n };\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1728963796200,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,9 +59,11 @@\n \r\n      const timer = setTimeout(() => { \r\n      fn(...args)\r\n     },t);\r\n-    const a\r\n+    const cancelFn = function() {\r\n+        c\r\n+    }\r\n \r\n };\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1728963802735,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,9 +60,9 @@\n      const timer = setTimeout(() => { \r\n      fn(...args)\r\n     },t);\r\n     const cancelFn = function() {\r\n-        c\r\n+        clearTimeout(timer);\r\n     }\r\n \r\n };\r\n \r\n"
+                },
+                {
+                    "date": 1728963850519,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,9 +62,9 @@\n     },t);\r\n     const cancelFn = function() {\r\n         clearTimeout(timer);\r\n     }\r\n-\r\n+    return cancelFn;\r\n };\r\n \r\n \r\n //    const result = [];\r\n"
+                }
+            ],
+            "date": 1728963335693,
+            "name": "Commit-0",
+            "content": "2715. Timeout Cancellation\r\nEasy\r\nCompanies\r\nGiven a function fn, an array of arguments args, and a timeout t in milliseconds, return a cancel function cancelFn.\r\n\r\nAfter a delay of cancelTimeMs, the returned cancel function cancelFn will be invoked.\r\n\r\nsetTimeout(cancelFn, cancelTimeMs)\r\nInitially, the execution of the function fn should be delayed by t milliseconds.\r\n\r\nIf, before the delay of t milliseconds, the function cancelFn is invoked, it should cancel the delayed execution of fn. Otherwise, if cancelFn is not invoked within the specified delay t, fn should be executed with the provided args as arguments.\r\n\r\n \r\n\r\nExample 1:\r\n\r\nInput: fn = (x) => x * 5, args = [2], t = 20\r\nOutput: [{\"time\": 20, \"returned\": 10}]\r\nExplanation: \r\nconst cancelTimeMs = 50;\r\nconst cancelFn = cancellable((x) => x * 5, [2], 20);\r\nsetTimeout(cancelFn, cancelTimeMs);\r\n\r\nThe cancellation was scheduled to occur after a delay of cancelTimeMs (50ms), which happened after the execution of fn(2) at 20ms.\r\nExample 2:\r\n\r\nInput: fn = (x) => x**2, args = [2], t = 100\r\nOutput: []\r\nExplanation: \r\nconst cancelTimeMs = 50;\r\nconst cancelFn = cancellable((x) => x**2, [2], 100);\r\nsetTimeout(cancelFn, cancelTimeMs);\r\n\r\nThe cancellation was scheduled to occur after a delay of cancelTimeMs (50ms), which happened before the execution of fn(2) at 100ms, resulting in fn(2) never being called.\r\nExample 3:\r\n\r\nInput: fn = (x1, x2) => x1 * x2, args = [2,4], t = 30\r\nOutput: [{\"time\": 30, \"returned\": 8}]\r\nExplanation: \r\nconst cancelTimeMs = 100;\r\nconst cancelFn = cancellable((x1, x2) => x1 * x2, [2,4], 30);\r\nsetTimeout(cancelFn, cancelTimeMs);\r\n\r\nThe cancellation was scheduled to occur after a delay of cancelTimeMs (100ms), which happened after the execution of fn(2,4) at 30ms."
+        }
+    ]
+}

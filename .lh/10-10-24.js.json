@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 18,
+            "activePatchIndex": 19,
             "patches": [
                 {
                     "date": 1728522341566,
@@ -80,6 +80,10 @@
                 {
                     "date": 1728734963165,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,12 +33,8 @@\n \r\n \r\n \r\n \r\n-\r\n-\r\n-\r\n-\r\n var createCounter = function(n) {\r\n \r\n     return function counter() {\r\n              return n++;\r\n"
+                },
+                {
+                    "date": 1728953308116,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,11 +30,8 @@\n // Output: [-2,-1,0,1,2]\r\n // Explanation: counter() initially returns -2. Then increases after each sebsequent call.\r\n \r\n \r\n-\r\n-\r\n-\r\n var createCounter = function(n) {\r\n \r\n     return function counter() {\r\n              return n++;\r\n"
                 }
             ],
             "date": 1728522341566,

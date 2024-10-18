@@ -39,14 +39,8 @@
 
 
 
-
-
-
-
 const nums = [ 2, 7, 11, 15 ];
-
 target = 9;   
-
 
 var twoSum = function(target) {
     const result = nums[0] + nums[1]

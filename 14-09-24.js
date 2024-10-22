@@ -35,7 +35,6 @@
 // Follow-up: Can you come up with an algorithm that is less than O(n2) time complexity?
 
 
-
 const nums = [ 2, 7, 11, 15 ];
 target = 9;   
 

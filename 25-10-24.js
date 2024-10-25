@@ -41,23 +41,44 @@
 
 
 
+var filter = function (arr, fn){    
+
+    let ans = [];
 
 
-
-
-
-
-
-
-var filter = function(arr, fn) {
-    const filteredArr = [];
-    
     for (let i = 0; i < arr.length; i++) {
-        if (fn(arr[i], i)) {
-
-            filteredArr.push(arr[i]);
+        if( fn(arr[i], i) ){
+        ans.push(arr[i])
         }
     }
-    
-    return filteredArr;
+    return ans;
+
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

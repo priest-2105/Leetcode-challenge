@@ -38,9 +38,6 @@
 
 
 
-
-
-
 var filter = function (arr, fn){    
 
     let ans = [];

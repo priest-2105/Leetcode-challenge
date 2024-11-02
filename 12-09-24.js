@@ -9,15 +9,16 @@ let number = 5;
 
 function createCounter (init) {
 
-    init = number;
+    let number = init;
 
     return {
         increament : () => {
+            number += 1;
             return init;
         },
 
         decreament : () => {
-            init--
+            number -= 1
             return init;
         },
 

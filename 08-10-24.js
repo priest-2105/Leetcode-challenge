@@ -8,6 +8,8 @@ class ArrayWrapper {
         return this.nums.reduce((sum, num) => sum + num, 0);
     }
 
+
+    
     toString() {
         return `[${this.nums.join(",")}]`;
     }

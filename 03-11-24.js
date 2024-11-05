@@ -15,8 +15,6 @@ var cancellable = function(fn, args, t) {
    return cancelFn;
 };
 
-
-
 //    const result = [];
 
 //    const fn = (x) => x  5;

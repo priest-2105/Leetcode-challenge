@@ -21,5 +21,7 @@ var minimumOperations = function(nums) {
     //     continue
     // }
     // return sum
-
 };
+
+
+
